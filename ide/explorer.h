@@ -34,7 +34,7 @@ class Explorer
 				}
 		};
 
-		ModelColumns m_Columns; /
+		ModelColumns m_Columns; 
 
 
 		void add_tree(std::string path);

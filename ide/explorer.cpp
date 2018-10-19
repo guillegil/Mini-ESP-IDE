@@ -1,5 +1,5 @@
 #include "explorer.h"
-#include "utils/dir.h"
+#include "dir.h"
 #include <string>
 #include <vector>
 #include <gtkmm.h>
