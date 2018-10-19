@@ -449,23 +449,6 @@
                     <child internal-child="selection">
                       <object class="GtkTreeSelection"/>
                     </child>
-                    <child>
-                      <object class="GtkTreeViewColumn">
-                        <property name="resizable">True</property>
-                        <property name="title" translatable="yes">Name</property>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkTreeViewColumn">
-                        <property name="title" translatable="yes">Tipe</property>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkTreeViewColumn">
-                        <property name="title" translatable="yes">Icon</property>
-                        <property name="clickable">True</property>
-                      </object>
-                    </child>
                   </object>
                   <packing>
                     <property name="expand">True</property>

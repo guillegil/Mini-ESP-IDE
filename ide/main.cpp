@@ -1,6 +1,6 @@
 /******************************************************
 * Compile this file with:
-*		 g++ `pkg-config --cflags gtk+-3.0` -o gtk_main gtk_main.cpp `pkg-config --libs gtk+-3.0`
+*		 g++ program.cc -o program `pkg-config --cflags --libs gtkmm-3.0`
 *
 * File name: 
 * Author:
@@ -8,11 +8,12 @@
 *
 *******************************************************/
 
-#include "esp_specific.h"
-
+#include "esp_specific.hpp"
+#include "explorer.h"
 #include <stdlib.h>
 #include <iostream>
 #include <gtkmm.h>
+
 
 Gtk::Window *pWindow = nullptr;
 void on_button_clicked();	
@@ -45,6 +46,7 @@ int main (int   argc, char *argv[])
     	return 1;
 	}
 
+	Explorer exp(refBuilder);
 	EspSpecific esp_device(refBuilder);
  
 

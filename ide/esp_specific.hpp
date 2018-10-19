@@ -2,14 +2,14 @@
 * Compile this file with:
 *		 g++ `pkg-config --cflags gtk+-3.0` -o gtk_main gtk_main.cpp `pkg-config --libs gtk+-3.0`
 *
-* File name: 
-* Author:
-* Date:
+* File name: esp_specific.hpp
+* Author: Guillermo Gil Rodríguez
+* Date: 26-Sep-2018
 *
 *******************************************************/
 
-#ifndef __ESP_SPECIFIC_H__
-#define __ESP_SPECIFIC_H__
+#ifndef __ESP_SPECIFIC_HPP__
+#define __ESP_SPECIFIC_HPP__
 
 
 
@@ -38,6 +38,7 @@ class EspSpecific
 		static void device_chip_changed();
 		static void device_port_changed();			
 
+		void run_build();
 		// Widgets	
 
 		Gtk::Button *build_button, *flash_button;

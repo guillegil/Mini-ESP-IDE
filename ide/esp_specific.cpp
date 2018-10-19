@@ -4,7 +4,7 @@
 #include <string.h>
 #include <gtkmm.h>
 
-#include "esp_specific.h"
+#include "esp_specific.hpp"
 #include "paths.hpp"
 
 
@@ -48,7 +48,7 @@ EspSpecific::EspSpecific(Glib::RefPtr<Gtk::Builder> refBuilder)
     refBuilder -> get_widget("FlashButton_Main", EspSpecific::flash_button);
     {
         EspSpecific::flash_button -> signal_clicked().connect(sigc::ptr_fun(EspSpecific::flash_button_clicked));
-        EspSpecific::flash_button -> set_sensitive(false);
+        //EspSpecific::flash_button -> set_sensitive(false);
     }
 
     refBuilder -> get_widget("AllForBuildTButton_Main", build_toggle_button);
@@ -141,4 +141,28 @@ void EspSpecific::set_path(std::string path) const
 
     std::cout << command << std::endl;
     system(command.c_str());
+}
+
+void EspSpecific::run_build()
+{
+    if(device_chip == "ESP8266")
+    {
+        /* 1) make all
+        *      1.1) Any issues?
+        *           1.1.1) Yes: Notify all errors and exit run
+        *           1.1.2) No: Notify all ok 
+        *      1.2) Verify device port, it exits?
+        *           1.2.1) Yes: Verify device chip, it's the same as 'device chip' value?
+        *               1.2.1.1) Yes: Notify all ok
+        *               1.2.1.2) No: Notify all: Warning
+        *           1.2.2) No: Notify all: Error and exit
+        *       1.3) Activate flash button
+        * 
+        * ******************************************************************************************/
+    }else // Device chip = ESP32
+    {
+
+
+    }       
+
 }
