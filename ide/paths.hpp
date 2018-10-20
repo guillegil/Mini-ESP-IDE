@@ -1,3 +1,13 @@
+/******************************************************
+* Compile this file with:
+*		 g++ program.cc -o program `pkg-config --cflags --libs gtkmm-3.0`
+*
+* File name:  explorer.cpp
+* Author: Guillermo Gil Rodríguez
+* Date:
+*
+*******************************************************/
+
 #ifndef __PATH_H__
 #define __PATH_H__
 

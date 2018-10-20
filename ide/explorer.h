@@ -36,7 +36,6 @@ class Explorer
 
 		ModelColumns m_Columns; 
 
-
 		void add_tree(std::string path);
 	private:
 		// Signal Handlers
@@ -48,9 +47,11 @@ class Explorer
 		void save_as_button_clicked();
 		void git_button_clicked();
 		void new_project_button_clicked();
-		void open_project_button_clicked();
+		static void open_project_button_clicked();
 		void close_project_button_clicked();
 		
+		static void cd_cancel_button_clicked();
+		static void cd_select_button_clicked();
 
 		// Methots
 };

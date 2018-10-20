@@ -1,3 +1,13 @@
+/******************************************************
+* Compile this file with:
+*		 g++ program.cc -o program `pkg-config --cflags --libs gtkmm-3.0`
+*
+* File name:  explorer.cpp
+* Author: Guillermo Gil Rodríguez
+* Date:
+*
+*******************************************************/
+
 #include <gtkmm/button.h>
 #include <gtkmm/togglebutton.h>
 #include <iostream>

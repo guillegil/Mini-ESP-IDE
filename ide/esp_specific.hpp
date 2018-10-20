@@ -4,7 +4,7 @@
 *
 * File name: esp_specific.hpp
 * Author: Guillermo Gil Rodríguez
-* Date: 26-Sep-2018
+* Date: 
 *
 *******************************************************/
 

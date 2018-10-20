@@ -2,8 +2,8 @@
 * Compile this file with:
 *		 g++ program.cc -o program `pkg-config --cflags --libs gtkmm-3.0`
 *
-* File name: 
-* Author:
+* File name:  main.cpp
+* Author: Guillermo Gil Rodríguez
 * Date:
 *
 *******************************************************/
