@@ -54,13 +54,17 @@ int Dir::get_num_files(){
 }
 
 
-std::vector<string> Dir::get_filenames(){
+std::vector<string> Dir::get_filenames(bool show_hidden){
     if(dir_path != ""){
         dir = opendir(dir_path.c_str());
         if(dir != NULL){
             while((ent = readdir(dir)) != NULL){
                 string name(ent->d_name);       // Create string with the name of the file found
-                filenames.push_back(name);      // Push the string name
+                if(show_hiden || name[0] != '.'){   // Solved with Karnaugh
+                    filenames.push_back(name);      // Push the string name
+                }else{
+
+                }
             }  // If error, errno is set properly
             closedir (dir);
         } // If error, errno is set properly
