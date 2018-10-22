@@ -1,6 +1,5 @@
 
 #include "dir.h"
-#include "errno.h"
 
 using namespace std;
 
@@ -70,3 +69,70 @@ std::vector<string> Dir::get_filenames(){
     return filenames;
 }
 
+int Dir::new_file(std::string file_name){
+    string full_path = dir_path + "/" + file_name;
+     if(creat(full_path.c_str(), S_IRWXU | S_IRWXG | S_IRWXO) < 0){
+        return -1;
+    }   
+    return 1;
+}
+
+int Dir::new_folder(std::string folder_name){
+    string full_path;
+    full_path = dir_path + "/" + folder_name;
+    if(mkdir(full_path.c_str(), S_IRWXU | S_IRWXG | S_IRWXO) < 0)
+        return -1;
+    else
+        return 1;
+}
+
+int Dir::new_file(std::string path, std::string file_name){
+    string full_path = path + "/" + file_name;
+     if(creat(full_path.c_str(), S_IRWXU | S_IRWXG | S_IRWXO) < 0){
+        return -1;
+    }   
+    return 1;
+}
+
+int Dir::new_folder(std::string path, std::string folder_name){
+    string full_path = full_path = path + "/" + folder_name;
+    if(mkdir(full_path.c_str(), S_IRWXU | S_IRWXG | S_IRWXO) < 0)
+        return -1;
+    else
+        return 1;
+}
+
+bool Dir::is_readable(std::string file_name){
+    struct stat st;
+    string full_path = dir_path + "/" + file_name;
+    stat(full_path.c_str(), &st);
+    mode_t mode = st.st_mode;
+    if(mode & S_IRUSR)
+        return 1;
+    else
+        return 0;
+}
+
+bool Dir::is_writeable(std::string file_name){
+    struct stat st;
+    string full_path = dir_path + "/" + file_name;
+    stat(full_path.c_str(), &st);
+    mode_t mode = st.st_mode;
+    if(mode & S_IWUSR)
+        return 1;
+    else
+        return 0;
+}
+
+bool Dir::is_executable(std::string file_name){
+    struct stat st;
+    string full_path = dir_path + "/" + file_name;
+    stat(full_path.c_str(), &st);
+    mode_t mode = st.st_mode;
+    if(mode & S_IXUSR)
+        return 1;
+    else
+        return 0;
+}
+
+bool Dir::exist(std::string file_name){}
